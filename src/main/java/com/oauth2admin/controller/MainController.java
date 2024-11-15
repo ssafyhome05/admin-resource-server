@@ -12,7 +12,7 @@ public class MainController {
   @GetMapping("/me")
   public ResWrapper me() {
 
-    ResDto resDto = ResDto.builder().username(SecurityContextHolder.getContext().getAuthentication().getName()).build();
+    ResDto resDto = ResDto.builder().username(SecurityContextHolder.getContext().getAuthentication().getName()).role("ADMIN").build();
     return ResWrapper.builder().response(resDto).build();
   }
 }
